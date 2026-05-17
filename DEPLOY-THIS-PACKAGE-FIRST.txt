@@ -1,0 +1,15 @@
+DEPLOY THIS PACKAGE TO RESTORE CHARGEWISEHUB
+
+Upload the CONTENTS of this folder into Hostinger public_html.
+Important: index.html must sit directly inside public_html, not inside a second folder.
+
+This fixed version includes:
+- 28 original static pages
+- 165 bundled assets
+- sitemap.xml
+- robots.txt
+- restored placeholder pages for previously broken /reviews/... links
+- Botpress integration instructions
+
+Botpress note:
+The live Botpress connection could not be completed from ChatGPT because Botpress account authorisation failed. After you log in to Botpress and copy your Webchat embed script, paste it before </body> in the HTML pages or add it to WordPress/Elementor using an HTML widget.

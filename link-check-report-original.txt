@@ -1,0 +1,71 @@
+ChargeWiseHub Static Export — Link Check Report
+Generated: 2026-05-10
+Pages checked: 28
+Assets bundled: 165
+
+SUMMARY
+-------
+Broken internal links: 45
+Missing assets:        0
+Duplicate paths:       0
+Missing titles:        0
+
+BROKEN INTERNAL LINKS
+---------------------
+device-charging/best-wireless-phone-chargers/index.html -> /reviews/belkin-ultracharge-pro
+device-charging/best-wireless-phone-chargers/index.html -> /reviews/ugreen-magflow-qi2
+device-charging/best-wireless-phone-chargers/index.html -> /reviews/cygnett-chargebase-qi2
+device-charging/best-wireless-phone-chargers/index.html -> /reviews/anker-maggo-3in1
+device-charging/best-wireless-phone-chargers/index.html -> /reviews/anker-maggo-2in1-stand
+device-charging/best-wireless-phone-chargers/index.html -> /reviews/apple-magsafe-charger
+device-charging/best-wireless-phone-chargers/index.html -> /reviews/samsung-wireless-charger-trio
+device-charging/best-wireless-phone-chargers/index.html -> /reviews/esr-halolock-qi2
+device-charging/best-wireless-phone-chargers/index.html -> /reviews/belkin-qi2-popup
+device-charging/best-wireless-phone-chargers/index.html -> /reviews/belkin-ultracharge-pro
+device-charging/best-wireless-phone-chargers/index.html -> /reviews/ugreen-magflow-qi2
+device-charging/best-wireless-phone-chargers/index.html -> /reviews/cygnett-chargebase-qi2
+device-charging/best-wireless-phone-chargers/index.html -> /reviews/anker-maggo-3in1
+device-charging/best-wireless-phone-chargers/index.html -> /reviews/anker-maggo-2in1-stand
+device-charging/best-wireless-phone-chargers/index.html -> /reviews/apple-magsafe-charger
+device-charging/best-wireless-phone-chargers/index.html -> /reviews/samsung-wireless-charger-trio
+device-charging/best-wireless-phone-chargers/index.html -> /reviews/esr-halolock-qi2
+device-charging/best-wireless-phone-chargers/index.html -> /reviews/belkin-qi2-popup
+device-charging/best-fast-phone-chargers/index.html -> /reviews/anker-prime-250w
+device-charging/best-fast-phone-chargers/index.html -> /reviews/ugreen-nexode-pro-160w
+device-charging/best-fast-phone-chargers/index.html -> /reviews/apple-35w-dual
+device-charging/best-fast-phone-chargers/index.html -> /reviews/samsung-65w-trio
+device-charging/best-fast-phone-chargers/index.html -> /reviews/belkin-boostcharge-pro-140w
+device-charging/best-fast-phone-chargers/index.html -> /reviews/anker-nano-ii-65w
+device-charging/best-fast-phone-chargers/index.html -> /reviews/anker-prime-250w
+device-charging/best-fast-phone-chargers/index.html -> /reviews/ugreen-nexode-pro-160w
+device-charging/best-fast-phone-chargers/index.html -> /reviews/apple-35w-dual
+device-charging/best-fast-phone-chargers/index.html -> /reviews/samsung-65w-trio
+device-charging/best-fast-phone-chargers/index.html -> /reviews/belkin-boostcharge-pro-140w
+device-charging/best-fast-phone-chargers/index.html -> /reviews/anker-nano-ii-65w
+device-charging/best-power-banks/index.html -> /reviews/anker-prime-27650
+device-charging/best-power-banks/index.html -> /reviews/ugreen-magflow-powerbank
+device-charging/best-power-banks/index.html -> /reviews/belkin-boost-charge-26k
+device-charging/best-power-banks/index.html -> /reviews/anker-maggo-slim
+device-charging/best-power-banks/index.html -> /reviews/ugreen-145w-power-bank
+device-charging/best-power-banks/index.html -> /reviews/anker-prime-27650
+device-charging/best-power-banks/index.html -> /reviews/ugreen-magflow-powerbank
+device-charging/best-power-banks/index.html -> /reviews/belkin-boost-charge-26k
+device-charging/best-power-banks/index.html -> /reviews/anker-maggo-slim
+device-charging/best-power-banks/index.html -> /reviews/ugreen-145w-power-bank
+device-charging/best-laptop-chargers/index.html -> /reviews/anker-prime-250w
+device-charging/best-laptop-chargers/index.html -> /reviews/ugreen-nexode-140w
+device-charging/best-laptop-chargers/index.html -> /reviews/apple-140w-usbc
+device-charging/best-laptop-chargers/index.html -> /reviews/belkin-boostcharge-140w
+device-charging/best-laptop-chargers/index.html -> /reviews/ugreen-nexode-pro-160w
+
+MISSING ASSETS
+--------------
+(none)
+
+DUPLICATE PATHS
+---------------
+(none)
+
+MISSING TITLES
+--------------
+(none)

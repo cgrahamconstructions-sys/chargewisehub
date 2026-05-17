@@ -1,0 +1,10 @@
+ChargeWiseHub Static Export — Link Check Report
+Generated: fixed package
+
+SUMMARY
+-------
+Broken internal links from original export: 45
+Missing assets: 0
+Fix applied: Created restored placeholder review pages for every missing /reviews/... path.
+
+Original report saved as: link-check-report-original.txt

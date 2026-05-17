@@ -1,0 +1,28 @@
+ChargeWiseHub Botpress Integration
+
+Live Botpress connection attempt failed because the Botpress account is not authorised in this ChatGPT session.
+
+To complete manually:
+1. Open https://app.botpress.cloud and log in.
+2. Create or open bot: ChargeWiseHub Assistant.
+3. Enable Webchat / Website channel.
+4. Copy the Botpress embed script.
+5. Paste the script before </body> in every HTML page, or into WordPress Elementor using an HTML widget.
+
+Recommended bot opening message:
+Hi, I can help you find the right charger. What are you charging today?
+
+Suggested buttons:
+- Car or 4WD battery
+- EV home charger
+- Phone or tablet
+- Laptop charger
+- Power bank
+- Jump starter
+
+Suggested knowledge sources:
+- sitemap.xml
+- best-battery-chargers-australia
+- best-ev-home-chargers-australia
+- device-charging pages
+- reviews pages
