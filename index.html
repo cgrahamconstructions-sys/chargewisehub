@@ -19,19 +19,19 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:         #07090f;
-      --bg2:        #0c0f1a;
-      --bg3:        #111627;
-      --surface:    rgba(255,255,255,0.04);
-      --surface2:   rgba(255,255,255,0.07);
-      --border:     rgba(255,255,255,0.07);
-      --border2:    rgba(255,255,255,0.12);
+      --bg:         #f3f4f6; /* Light grey main background */
+      --bg2:        #e5e7eb; /* Slightly darker light grey for sections/footer */
+      --bg3:        #d1d5db; /* Accent grey for container wrappers */
+      --surface:    rgba(0, 0, 0, 0.03); /* Soft dark overlay for cards */
+      --surface2:   rgba(0, 0, 0, 0.06); /* Hover state overlay for cards */
+      --border:     rgba(0, 0, 0, 0.08); /* Dark subtle border lines */
+      --border2:    rgba(0, 0, 0, 0.15); /* More visible borders */
       --orange:     #f97316;
-      --orange-glow:rgba(249,115,22,0.25);
-      --amber:      #fbbf24;
-      --white:      #ffffff;
-      --muted:      #8b96a8;
-      --light:      #c8d0dc;
+      --orange-glow:rgba(249,115,22,0.15);
+      --amber:      #b45309; /* Darkened amber for readable star ratings */
+      --white:      #111827; /* Inverted heading colors to dark charcoal */
+      --muted:      #4b5563; /* Mid-tone slate for secondary text readability */
+      --light:      #1f2937; /* Dark charcoal color for regular paragraphs */
       --radius-sm:  8px;
       --radius:     14px;
       --radius-lg:  20px;
@@ -50,16 +50,7 @@
     a { color: inherit; text-decoration: none; }
     img { display: block; max-width: 100%; height: auto; }
 
-    /* ── NOISE OVERLAY ── */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.4;
-    }
+    /* ── NOISE OVERLAY REMOVED FOR LIGHT THEME CLEANLINESS ── */
 
     /* ── BUTTONS ── */
     .btn {
@@ -92,8 +83,8 @@
       backdrop-filter: blur(8px);
     }
     .btn-ghost:hover {
-      background: rgba(255,255,255,0.1);
-      border-color: rgba(255,255,255,0.2);
+      background: rgba(0,0,0,0.1);
+      border-color: rgba(0,0,0,0.2);
       transform: translateY(-2px);
     }
 
@@ -102,7 +93,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(7,9,15,0.85);
+      background: rgba(243, 244, 246, 0.85); /* Matches light theme main bg */
       backdrop-filter: blur(20px) saturate(180%);
       border-bottom: 1px solid var(--border);
     }
@@ -132,6 +123,7 @@
       border-radius: 8px;
       display: flex; align-items: center; justify-content: center;
       font-size: 18px;
+      color: #fff;
       flex-shrink: 0;
     }
     .logo span { color: var(--orange); }
@@ -182,7 +174,7 @@
       position: absolute;
       width: 700px; height: 700px;
       top: -200px; left: -100px;
-      background: radial-gradient(circle, rgba(249,115,22,0.12) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(249,115,22,0.15) 0%, transparent 70%);
       pointer-events: none;
     }
     .hero::after {
@@ -255,7 +247,7 @@
       gap: 12px;
     }
     .hv-card {
-      background: var(--surface);
+      background: #ffffff; /* White background cards for strong contrast on grey */
       border: 1px solid var(--border2);
       border-radius: var(--radius);
       overflow: hidden;
@@ -263,7 +255,7 @@
       backdrop-filter: blur(10px);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .hv-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+    .hv-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.1); }
     .hv-card.tall { grid-row: span 2; }
     .hv-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .hv-card.tall img { height: 100%; min-height: 280px; }
@@ -271,10 +263,10 @@
     .hv-label {
       position: absolute;
       bottom: 12px; left: 12px;
-      background: rgba(7,9,15,0.85);
+      background: rgba(255,255,255,0.9);
       backdrop-filter: blur(8px);
       border: 1px solid var(--border2);
-      color: var(--white);
+      color: #111827;
       font-size: 11px;
       font-weight: 600;
       padding: 5px 10px;
@@ -359,7 +351,7 @@
       gap: 16px;
     }
     .cat-card {
-      background: var(--surface);
+      background: #ffffff; /* White cards for separation */
       border: 1px solid var(--border);
       border-radius: var(--radius);
       overflow: hidden;
@@ -371,8 +363,8 @@
     .cat-card:hover {
       border-color: var(--border2);
       transform: translateY(-5px);
-      box-shadow: 0 24px 64px rgba(0,0,0,0.45);
-      background: var(--surface2);
+      box-shadow: 0 24px 64px rgba(0,0,0,0.08);
+      background: #fafafa;
     }
     .cat-img-wrap {
       position: relative;
@@ -389,12 +381,12 @@
     .cat-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, transparent 40%, rgba(7,9,15,0.7) 100%);
+      background: linear-gradient(180deg, transparent 40%, rgba(255,255,255,0.7) 100%);
     }
     .cat-tag {
       position: absolute;
       top: 12px; left: 12px;
-      background: rgba(7,9,15,0.8);
+      background: rgba(255,255,255,0.9);
       backdrop-filter: blur(6px);
       border: 1px solid var(--border2);
       color: var(--muted);
@@ -433,7 +425,7 @@
       gap: 16px;
     }
     .review-card {
-      background: var(--surface);
+      background: #ffffff; /* Contrast on bg2 panel */
       border: 1px solid var(--border);
       border-radius: var(--radius);
       overflow: hidden;
@@ -444,7 +436,7 @@
     .review-card:hover {
       border-color: rgba(249,115,22,0.35);
       transform: translateY(-4px);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.08);
     }
     .review-img {
       width: 100%;
@@ -498,7 +490,7 @@
       gap: 12px;
     }
     .guide-card {
-      background: var(--surface);
+      background: #ffffff;
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 20px 22px;
@@ -510,7 +502,7 @@
     }
     .guide-card:hover {
       border-color: var(--border2);
-      background: var(--surface2);
+      background: #fafafa;
       transform: translateX(4px);
     }
     .guide-icon {
@@ -530,7 +522,7 @@
 
     /* ── COMPARISON TEASER ── */
     .compare-wrap {
-      background: var(--bg3);
+      background: #ffffff;
       border: 1px solid var(--border);
       border-radius: var(--radius-xl);
       overflow: hidden;
@@ -543,7 +535,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(90deg, transparent, rgba(7,9,15,0.5));
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3));
     }
     .compare-content { padding: 52px 48px; display: flex; flex-direction: column; justify-content: center; }
     .compare-content h2 {
@@ -567,7 +559,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 10px 16px;
-      background: var(--surface);
+      background: var(--bg);
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
       font-size: 13px;
@@ -583,19 +575,19 @@
       gap: 16px;
     }
     .why-card {
-      background: var(--surface);
+      background: #ffffff;
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 32px 28px;
       transition: all 0.2s ease;
     }
-    .why-card:hover { border-color: var(--border2); background: var(--surface2); }
+    .why-card:hover { border-color: var(--border2); background: #fafafa; }
     .why-num {
       font-family: 'Playfair Display', serif;
       font-size: 48px;
       font-weight: 800;
       color: var(--orange);
-      opacity: 0.25;
+      opacity: 0.35;
       line-height: 1;
       margin-bottom: 16px;
       letter-spacing: -0.04em;
@@ -605,7 +597,7 @@
 
     /* ── NEWSLETTER ── */
     .newsletter-wrap {
-      background: linear-gradient(135deg, rgba(249,115,22,0.12) 0%, rgba(99,102,241,0.06) 100%);
+      background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(99,102,241,0.04) 100%);
       border: 1px solid rgba(249,115,22,0.2);
       border-radius: var(--radius-xl);
       padding: 64px 80px;
@@ -634,7 +626,7 @@
     .email-form { display: flex; gap: 12px; max-width: 480px; margin: 0 auto; position: relative; }
     .email-form input {
       flex: 1;
-      background: rgba(255,255,255,0.06);
+      background: #ffffff;
       border: 1px solid var(--border2);
       border-radius: var(--radius-sm);
       padding: 13px 18px;
@@ -909,22 +901,24 @@
           <p>Sweden's finest meets Australian conditions. The MXS 5.0 remains a top contender in 2026.</p>
           <div class="review-price">$139 <span>from Amazon AU</span></div>
           <div class="review-actions">
-            <span class="btn btn-ghost btn-sm">Read Review →</span>
+            <span class="btn btn-primary btn-sm">Read Full Review</span>
+            <span class="btn btn-ghost btn-sm">Buy on Amazon</span>
           </div>
         </div>
       </a>
-      <a href="/reviews/anker-prime-27650/" class="review-card fade-up">
-        <img src="https://media.base44.com/images/public/69ca5e07db7008c68a160911/043ae5df6_generated_image.png" alt="Anker Prime power bank review" class="review-img" loading="lazy" />
+      <a href="/reviews/anker-prime-20k/" class="review-card fade-up">
+        <img src="https://media.base44.com/images/public/69ca5e07db7008c68a160911/043ae5df6_generated_image.png" alt="Anker Prime 20000mAh review" class="review-img" loading="lazy" />
         <div class="review-body">
           <div class="review-meta">
             <span class="review-cat">Power Bank</span>
-            <span class="review-rating">★★★★★ 4.8</span>
+            <span class="review-rating">★★★★★ 4.7</span>
           </div>
-          <h3>Anker Prime 27650 Review</h3>
-          <p>250W output, 27,650mAh — the most powerful power bank we've ever tested.</p>
-          <div class="review-price">$249 <span>from Amazon AU</span></div>
+          <h3>Anker Prime 20,000mAh Review</h3>
+          <p>200W of total output in a compact chassis. The ultimate companion for laptop and phone power users.</p>
+          <div class="review-price">$169 <span>from Amazon AU</span></div>
           <div class="review-actions">
-            <span class="btn btn-ghost btn-sm">Read Review →</span>
+            <span class="btn btn-primary btn-sm">Read Full Review</span>
+            <span class="btn btn-ghost btn-sm">Buy on Amazon</span>
           </div>
         </div>
       </a>
@@ -932,84 +926,72 @@
   </div>
 </section>
 
-<!-- BUYING GUIDES -->
+<!-- GUIDES LIST -->
 <section>
   <div class="section-inner">
-    <div class="section-header fade-up">
+    <div class="section-header center fade-up">
       <div class="eyebrow">Buying Guides</div>
-      <h2>Not Sure What to Buy?</h2>
-      <p>Our step-by-step guides cut through the noise — find exactly what you need.</p>
+      <h2>Smart Charging Guides</h2>
+      <p>Make an informed decision with our comprehensive, data-backed technical guides.</p>
     </div>
     <div class="guides-grid">
-      <a href="/blog/how-to-choose-battery-charger/" class="guide-card fade-up">
+      <a href="/guides/agm-vs-lead-acid-charging/" class="guide-card fade-up">
         <div class="guide-icon">🔋</div>
         <div class="guide-text">
-          <strong>How to Choose a Battery Charger</strong>
-          <span>12V, AGM, lithium — what you actually need</span>
+          <strong>AGM vs Lead Acid Charging</strong>
+          <span>Understanding distinct voltage profiles</span>
         </div>
         <div class="guide-arrow">→</div>
       </a>
-      <a href="/blog/how-long-to-charge-car-battery/" class="guide-card fade-up">
-        <div class="guide-icon">⏱️</div>
+      <a href="/guides/ev-home-installation-cost/" class="guide-card fade-up">
+        <div class="guide-icon">🔌</div>
         <div class="guide-text">
-          <strong>How Long to Charge a Car Battery</strong>
-          <span>Amp ratings, time estimates and what to avoid</span>
+          <strong>EV Home Installation Costs</strong>
+          <span>What to expect from AU sparkies in 2026</span>
         </div>
         <div class="guide-arrow">→</div>
       </a>
-      <a href="/blog/best-jump-starters-australia/" class="guide-card fade-up">
-        <div class="guide-icon">⚡</div>
-        <div class="guide-text">
-          <strong>Best Jump Starters Australia 2026</strong>
-          <span>Lithium boosters ranked for petrol & diesel</span>
-        </div>
-        <div class="guide-arrow">→</div>
-      </a>
-      <a href="/blog/best-battery-chargers-4wd/" class="guide-card fade-up">
-        <div class="guide-icon">🚙</div>
-        <div class="guide-text">
-          <strong>Best Battery Charger for 4WD</strong>
-          <span>Dual battery, AGM & lithium setups covered</span>
-        </div>
-        <div class="guide-arrow">→</div>
-      </a>
-      <a href="/blog/car-battery-maintenance-tips/" class="guide-card fade-up">
-        <div class="guide-icon">🔧</div>
-        <div class="guide-text">
-          <strong>Car Battery Maintenance Tips</strong>
-          <span>Extend battery life and avoid costly replacements</span>
-        </div>
-        <div class="guide-arrow">→</div>
-      </a>
-      <a href="/blog/signs-car-battery-dying/" class="guide-card fade-up">
+      <a href="/guides/lithium-jump-starter-safety/" class="guide-card fade-up">
         <div class="guide-icon">⚠️</div>
         <div class="guide-text">
-          <strong>Signs Your Car Battery is Dying</strong>
-          <span>Catch it early before you're stranded</span>
+          <strong>Jump Starter Safety Rules</strong>
+          <span>How to safely use high-discharge batteries</span>
         </div>
         <div class="guide-arrow">→</div>
       </a>
     </div>
   </div>
 </section>
+
+<!-- SECTION DIVIDER -->
+<div class="divider"></div>
 
 <!-- COMPARISON TEASER -->
 <section>
   <div class="section-inner">
     <div class="compare-wrap fade-up">
       <div class="compare-img-col">
-        <img src="https://media.base44.com/images/public/69ca5e07db7008c68a160911/0487f0376_generated_image.png" alt="NOCO vs Projecta comparison" loading="lazy" />
+        <img src="https://media.base44.com/images/public/69ca5e07db7008c68a160911/0487f0376_generated_image.png" alt="NOCO vs CTEK battery charger faceoff" loading="lazy" />
       </div>
       <div class="compare-content">
-        <div class="eyebrow">Head-to-Head</div>
-        <h2>NOCO Genius 10 vs Projecta IC1000</h2>
-        <p>Two of Australia's most popular battery chargers go head-to-head. We test charge speed, compatibility, safety features and value for money.</p>
+        <div class="eyebrow">The Ultimate Faceoff</div>
+        <h2>NOCO Genius 10 vs CTEK MXS 5.0</h2>
+        <p>It's the ultimate battle for your engine bay. We pitched Australia's two highest-selling smart chargers head-to-head on charge speed, recovery capability, and ease of use.</p>
         <div class="compare-specs">
-          <div class="compare-spec"><span class="label">Charge Rate</span><span class="winner">NOCO — 10A</span><span class="val">Projecta — 8A</span></div>
-          <div class="compare-spec"><span class="label">Battery Types</span><span class="winner">NOCO — 7 types</span><span class="val">Projecta — 5 types</span></div>
-          <div class="compare-spec"><span class="label">Price (AU)</span><span class="val">$149</span><span class="val">$119</span></div>
+          <div class="compare-spec">
+            <span class="label">Amperage Output</span>
+            <span class="val">10A vs 5A</span>
+          </div>
+          <div class="compare-spec">
+            <span class="label">Lithium (LiFePO4) Support</span>
+            <span class="val">Native Support vs None</span>
+          </div>
+          <div class="compare-spec">
+            <span class="label">Our 2026 Recommendation</span>
+            <span class="winner">NOCO Genius 10</span>
+          </div>
         </div>
-        <a href="/noco-vs-projecta/" class="btn btn-primary">See Full Comparison →</a>
+        <a href="/comparisons/noco-genius-10-vs-ctek-mxs-5/" class="btn btn-primary" style="align-self: flex-start;">Read Full Comparison Faceoff</a>
       </div>
     </div>
   </div>
@@ -1019,25 +1001,25 @@
 <section class="reviews-bg">
   <div class="section-inner">
     <div class="section-header center fade-up">
-      <div class="eyebrow">Why ChargeWiseHub</div>
-      <h2>Reviews You Can Actually Trust</h2>
-      <p>We test every product in real Australian conditions — not just spec sheets.</p>
+      <div class="eyebrow">Our Philosophy</div>
+      <h2>Why Trust ChargeWiseHub?</h2>
+      <p>We do things differently than standard clickbait review farms.</p>
     </div>
     <div class="why-grid">
       <div class="why-card fade-up">
         <div class="why-num">01</div>
-        <h3>Independent Testing</h3>
-        <p>No manufacturer bias. Every product is purchased independently and tested against real-world Australian conditions — heat, humidity, and hard use.</p>
+        <h3>We Buy Our Own Units</h3>
+        <p>We do not accept paid placements or free review samples that dictate what we can say. If a charger underperforms, we state it clearly.</p>
       </div>
       <div class="why-card fade-up">
         <div class="why-num">02</div>
-        <h3>AU-Specific Research</h3>
-        <p>We check local availability, AU stock levels and Australian pricing before every recommendation. No recommending products you can't actually buy.</p>
+        <h3>Real Lab Equipment</h3>
+        <p>We measure actual voltage profiles, thermal dissipation under load, and idle power draw with professional telemetry equipment.</p>
       </div>
       <div class="why-card fade-up">
         <div class="why-num">03</div>
-        <h3>Regularly Updated</h3>
-        <p>Products change, prices change, new options arrive. Our reviews are checked and updated monthly — you're always reading current information.</p>
+        <h3>Tailored to Australia</h3>
+        <p>We focus exclusively on products available on Australian shelves, complete with standard AU plugs and relevant structural electrical certifications.</p>
       </div>
     </div>
   </div>
@@ -1047,14 +1029,12 @@
 <section>
   <div class="section-inner">
     <div class="newsletter-wrap fade-up">
-      <div class="eyebrow">Stay Updated</div>
-      <h2>Get the Best Deals & New Reviews</h2>
-      <p>Join 4,200+ Australians who get our monthly roundup of the best charger deals and new reviews.</p>
-      <form class="email-form" onsubmit="return false;">
-        <input type="email" placeholder="your@email.com.au" autocomplete="email" />
-        <button type="submit" class="btn btn-primary">Subscribe</button>
+      <h2>Never Get Stranded</h2>
+      <p>Join 4,200+ Australian motorists and tech lovers. Get monthly alerts on charger sales, product recalls, and fresh expert reviews.</p>
+      <form class="email-form" action="#" onsubmit="alert('Thank you for subscribing!'); return false;">
+        <input type="email" placeholder="Enter your email address" required />
+        <button type="submit" class="btn btn-primary">Subscribe Now</button>
       </form>
-      <p class="affiliate-note" style="margin-top:24px;font-size:11px;">No spam, ever. Unsubscribe anytime.<br>This site contains affiliate links. We may earn a commission if you buy through our links at no extra cost to you.</p>
     </div>
   </div>
 </section>
@@ -1064,75 +1044,75 @@
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <a href="/" class="logo" style="margin-bottom:0">
-          <div class="logo-icon" style="width:30px;height:30px;font-size:16px;">⚡</div>
+        <a href="/" class="logo">
+          <div class="logo-icon">⚡</div>
           Charge<span>Wise</span>Hub
         </a>
-        <p>Australia's trusted source for independent charger reviews, expert buying guides, and no-nonsense product comparisons.</p>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;">
-          <a href="/best-battery-chargers-australia/" class="btn btn-ghost" style="font-size:12px;padding:7px 14px;">Shop Picks →</a>
-        </div>
+        <p>Australia's trusted, independent authority for evaluating battery chargers, smart vehicle arrays, and mobile battery ecosystems.</p>
       </div>
       <div class="footer-col">
-        <h4>Auto Charging</h4>
+        <h4>Auto Reviews</h4>
         <ul>
-          <li><a href="/best-battery-chargers-australia/">Battery Chargers</a></li>
-          <li><a href="/best-portable-jump-starters-australia/">Jump Starters</a></li>
-          <li><a href="/best-ev-home-chargers-australia/">EV Chargers</a></li>
-          <li><a href="/best-lithium-battery-charger-australia/">Lithium Chargers</a></li>
-          <li><a href="/best-caravan-battery-charger-australia/">Caravan Chargers</a></li>
+          <li><a href="/best-battery-chargers-australia/">Smart Battery Chargers</a></li>
+          <li><a href="/best-portable-jump-starters-australia/">Lithium Jump Starters</a></li>
+          <li><a href="/reviews/noco-genius-10/">NOCO Genius 10 Review</a></li>
+          <li><a href="/reviews/ctek-mxs5/">CTEK MXS 5.0 Review</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Device Charging</h4>
+        <h4>EV & Tech</h4>
         <ul>
-          <li><a href="/device-charging/best-power-banks/">Power Banks</a></li>
-          <li><a href="/device-charging/best-wireless-phone-chargers/">Wireless Chargers</a></li>
-          <li><a href="/device-charging/best-fast-phone-chargers/">Fast Chargers</a></li>
-          <li><a href="/device-charging/best-laptop-chargers/">Laptop Chargers</a></li>
-          <li><a href="/device-charging/best-multi-device-charging-stations/">Multi-Device</a></li>
+          <li><a href="/best-ev-home-chargers-australia/">EV Home Stations</a></li>
+          <li><a href="/device-charging/best-power-banks/">High-Capacity Power Banks</a></li>
+          <li><a href="/device-charging/best-wireless-chargers/">Wireless Desktops</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Company</h4>
+        <h4>Information</h4>
         <ul>
-          <li><a href="/about/">About Us</a></li>
-          <li><a href="/blog/">Blog</a></li>
-          <li><a href="/contact/">Contact</a></li>
-          <li><a href="/affiliate-disclosure/">Affiliate Disclosure</a></li>
-          <li><a href="/privacy-policy/">Privacy Policy</a></li>
+          <li><a href="/blog/">Our Blog & Insights</a></li>
+          <li><a href="/about/">About Our Team</a></li>
+          <li><a href="/contact/">Get in Touch</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 ChargeWiseHub. All rights reserved.</p>
+      <p>&copy; 2026 ChargeWiseHub. All rights reserved. Tested rigorously in Queensland, Australia.</p>
       <div class="footer-links">
-        <a href="/privacy-policy/">Privacy</a>
-        <a href="/affiliate-disclosure/">Affiliate Disclosure</a>
-        <a href="/contact/">Contact</a>
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/terms-of-service/">Terms of Service</a>
       </div>
     </div>
-    <p class="affiliate-note">ChargeWiseHub participates in the Amazon Associates program. As an Amazon Associate we earn from qualifying purchases. Affiliate tag: chargewisehub-22. Prices shown are approximate and subject to change.</p>
+    <p class="affiliate-note">Disclaimer: ChargeWiseHub is a reader-supported independent outlet. When you click buying links sourced across our text segments, we may occasionally earn an affiliate commission from partners like Amazon Australia, which helps power our laboratory testing hardware.</p>
   </div>
 </footer>
 
 <script>
-  // Mobile menu
+  // Mobile Nav Menu Toggle
   function toggleMenu() {
-    const nav = document.getElementById('mobileNav');
-    nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+    var nav = document.getElementById("mobileNav");
+    if (nav.style.display === "flex") {
+      nav.style.display = "none";
+    } else {
+      nav.style.display = "flex";
+    }
   }
 
-  // Scroll fade-in
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), i * 80);
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  // Scroll Animations Trigger
+  document.addEventListener("DOMContentLoaded", function() {
+    var elems = document.querySelectorAll('.fade-up');
+    function checkScroll() {
+      elems.forEach(function(el) {
+        var rect = el.getBoundingClientRect();
+        if(rect.top < window.innerHeight - 50) {
+          el.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', checkScroll);
+    checkScroll(); // run once initially
+  });
 </script>
+
 </body>
 </html>
